@@ -33,10 +33,10 @@ function onResults(results) {
       if (isRightHand === false) {
         let leftX = landmarks.map((val) => val.x);
         let leftY = landmarks.map((val) => val.y);
-        var messageLeftX = new OSC.Message("/lx/", ...leftX);
-        var messageLeftY = new OSC.Message("/ly/", ...leftY);
-        osc.send(messageLeftX);
-        osc.send(messageLeftY);
+        var messageLeft = new OSC.Message("/l/", ...leftX, ...leftY);
+        // var messageLeftY = new OSC.Message();
+        osc.send(messageLeft);
+      
       } else {
         let rightX = landmarks.map((val) => val.x);
         let rightY = landmarks.map((val) => val.y);
